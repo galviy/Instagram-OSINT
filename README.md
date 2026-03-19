@@ -6,7 +6,7 @@ Another level instagram scrapper using mobile API
 - requests
 
 # Project To DO
-- [ ] 
+- [ ] idk what next?
 - [x] get highlight (mendapatkan semua link didalam highlight
 - [x] get following (mendapatkan array following user instagram)
 - [x] get following name (mendapatkan array following user instagram beserta username instagram mereka)
