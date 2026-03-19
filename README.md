@@ -1,6 +1,11 @@
 # Proxy Checker
 Another level instagram scrapper using mobile API
 
+
+# Warning
+Using a self-bot or modified client could lead to your account being banned. Use this tool only if you understand the risks.
+
+
 # Requirements & library
 - colorama
 - requests
