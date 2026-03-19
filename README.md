@@ -32,3 +32,8 @@ you can modify the `token.json` to your information details, SHARING THIS DETAIL
 }
 ```
 
+# how to get api?
+
+debug instagram network by ur self lol, use frida to bypass ssl pinning 
+example -> https://engineering.beeper.com/2025/11/24/reverse-engineering-instagram-video-uploads/
+
