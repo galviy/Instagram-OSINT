@@ -1,4 +1,4 @@
-# Proxy Checker
+# instagram osint
 Another level instagram scrapper using mobile API
 
 
