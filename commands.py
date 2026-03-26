@@ -4,6 +4,8 @@ import random
 from credentials import my_cookies
 from colorama import Fore, Style, init
 import json
+from pathlib import Path
+import os
 
 class command:
 
@@ -105,7 +107,35 @@ class command:
                 print("Type: Video\n URL:", url)
             else:
                 print("Unknown media type")
-
+    @staticmethod
+    def downloadAll(user_id):
+        filename = os.path.join("json", f"{user_id}.json")
+        folder_user = os.path.join("json", user_id)
+        try:
+            with open(filename, 'r') as file:
+                data = json.load(file)
+                os.makedirs(folder_user, exist_ok=True)
+                counter = 0
+                for item in data:
+                    counter += 1
+                    url = item['url']
+                    
+                   
+                    save_path = os.path.join(folder_user, f"{counter}.jpg")
+                    
+                    print(f"Downloading {counter}: {url}")
+ 
+                    r = requests.get(url)
+                    with open(save_path, 'wb') as f:
+                        f.write(r.content)
+                        
+                print(f"Total {counter} file didownload.")
+    
+        except FileNotFoundError:
+            print(f"unable to find {filename}\nDo >get photo to download all links first")
+        except json.JSONDecodeError:
+            print(f"{filename} is corrupted")
+            
     @staticmethod
     def get_all_photos(user_id):
         base_url = f"https://i.instagram.com/api/v1/feed/user/{user_id}/"
@@ -171,7 +201,8 @@ class command:
                 continue
 
 
-        filename = f"{user_id}.json"
+        #filename = f"{user_id}.json"
+        filename = os.path.join("json", f"{user_id}.json")
         try:
             with open(filename, "w", encoding="utf-8") as f:
                 json.dump(all_photos, f, ensure_ascii=False, indent=2)
