@@ -67,7 +67,10 @@ _     ) \_______\__|IIIIII|__/__________________________
                 print("- get info (mendapatkan informasi seperti; followers,following)")
                 print("- get followers (mendapatkan array followers )")
                 print("- get photo (mendapatkan semua link foto) ")
+                print("- get save (simpan semua foto yang ada dari <id>.json)")
                 print("- exit")
             elif cmd == "get photo":
                 command.get_all_photos(user_id)
+            elif cmd == "get save":
+                command.downloadAll(user_id)
 
